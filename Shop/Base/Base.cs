@@ -8,7 +8,7 @@ namespace Shop
 {
      public class Base
     {
-        public Guid _id = new Guid();
+        public Guid _id = Guid.NewGuid();
         public string _name;
     }
 }

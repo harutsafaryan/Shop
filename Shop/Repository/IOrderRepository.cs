@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    class Order : Base
+    interface IOrderRepository : IBaseRepository<Order>
     {
-        public DateTime _date;
-        public List<Product> _products;
     }
 }

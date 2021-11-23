@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    interface ICustomerRepository : IBaseRepository<Customer>
+    public class Order : Base
     {
-        List<Order> GetOrdersByCustomerId(Guid id);
+        public DateTime _date;
+        public List<Product> _products;
     }
 }
