@@ -29,46 +29,16 @@ namespace Shop.Services
             return _orderRepository.Get(id);
         }
 
-        public decimal GetOrderPrice(Guid id)
-        {
-            Order order = _orderRepository.Get(id);
-            decimal sum = 0;
-            foreach (var item in order._products)
-            {
-                sum += item._price;
-            }
-
-            return sum;
-        }
-
-        public int GetProductCount(Guid id)
-        {
-            Order order = _orderRepository.Get(id);
-            int count = 0;
-            foreach (var item in order._products)
-            {
-                count++;
-            }
-            return count;
-        }
-
         public void Update(Order item)
         {
-            Order oldItem = _orderRepository.Get(item._id);
+            Order oldItem = _orderRepository.Get(item.Id);
             int index = _orderRepository.IndexOf(oldItem);
             _orderRepository.Update(item, index);
         }
-        public int ToatlProductCount()
+
+        public List<Order> GetAll()
         {
-            int count = 0;
-            foreach (var order in _orderRepository.GetAll())
-            {
-                foreach (var product in order)
-                {
-                    count++;
-                }
-            }
-            return count;
+            return _orderRepository.GetAll();
         }
     }
 }

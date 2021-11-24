@@ -31,9 +31,14 @@ namespace Shop
 
         public void Update(Product item)
         {
-            Product oldItem = _productRepository.Get(item._id);
+            Product oldItem = _productRepository.Get(item.Id);
             int index = _productRepository.IndexOf(oldItem);
             _productRepository.Update(item, index);
+        }
+
+        public List<Product> GetAll()
+        {
+            return _productRepository.GetAll();
         }
     }
 }

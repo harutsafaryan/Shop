@@ -8,5 +8,6 @@ namespace Shop
 {
     interface IOrderRepository : IBaseRepository<Order>
     {
+        Order Get(Guid id);
     }
 }

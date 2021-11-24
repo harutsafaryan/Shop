@@ -24,11 +24,6 @@ namespace Shop
             return items.Remove(item);
         }
 
-        public virtual T Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<T> GetAll()
         {
             return items;

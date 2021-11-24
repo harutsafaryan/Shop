@@ -9,7 +9,6 @@ namespace Shop
     public interface IBaseRepository<T>
     {
         void Add(T item);
-        T Get(Guid id);
         List<T> GetAll();
         void Update(T item, int index);
         bool Delete(T item);

@@ -12,7 +12,6 @@ namespace Shop.Services
         Order Get(Guid id);
         void Update(Order item);
         bool Delete(Order item);
-        decimal GetOrderPrice(Guid id);
-        int GetProductCount(Guid id);
+        List<Order> GetAll();
     }
 }

@@ -8,8 +8,13 @@ namespace Shop
 {
     public class Product
     {
-        public Guid _id = Guid.NewGuid();
-        public string _name;
-        public decimal _price;
+        public Product()
+        {
+            Id = Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+
     }
 }

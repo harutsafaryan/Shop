@@ -8,5 +8,6 @@ namespace Shop
 {
     interface IProductRepository : IBaseRepository<Product>
     {
+        Product Get(Guid id);
     }
 }

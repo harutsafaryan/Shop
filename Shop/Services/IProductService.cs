@@ -12,6 +12,7 @@ namespace Shop
         Product Get(Guid id);
         void Update(Product item);
         bool Delete(Product item);
+        List<Product> GetAll();
     }
 }
 

@@ -9,34 +9,14 @@ namespace Shop
 {
     public class Order
     {
-        public Guid _id = Guid.NewGuid();
-        public string _name;
-        public DateTime _date;
-        public List<Product> _products;
-
-        public Enumerator GetEnumerator()
+        public Order()
         {
-            return new Enumerator(_products, _products.Count);
+            Id = Guid.NewGuid();
+            Products = new List<Product>();
         }
-
-        public class Enumerator
-        {
-            public Enumerator(List<Product> product, int size)
-            {
-                _products = product;
-                _size = size;
-            }
-
-            private int _size;
-            private int _count;
-            private List<Product> _products;
-
-            public Product Current { get { return _products[_count++]; } }
-
-            public bool MoveNext()
-            {
-                return _count < _size;
-            }
-        }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public DateTime OrderDate { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

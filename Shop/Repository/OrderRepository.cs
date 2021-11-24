@@ -8,9 +8,9 @@ namespace Shop.Repository
 {
     class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
-        public override Order Get(Guid id)
+        public Order Get(Guid id)
         {
-            return items.FirstOrDefault(x => x._id == id);
+            return items.FirstOrDefault(x => x.Id == id);
         }
     }
 }

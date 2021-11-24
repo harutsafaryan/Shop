@@ -8,9 +8,9 @@ namespace Shop
 {
     class ProductRepository : BaseRepository<Product>, IProductRepository
     {
-        public override Product Get(Guid id)
+        public Product Get(Guid id)
         {
-            return items.FirstOrDefault(x => x._id == id);
+            return items.FirstOrDefault(x => x.Id == id);
         }
     }
 }
