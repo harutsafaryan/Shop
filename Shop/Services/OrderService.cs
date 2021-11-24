@@ -58,5 +58,17 @@ namespace Shop.Services
             int index = _orderRepository.IndexOf(oldItem);
             _orderRepository.Update(item, index);
         }
+        public int ToatlProductCount()
+        {
+            int count = 0;
+            foreach (var order in _orderRepository.GetAll())
+            {
+                foreach (var product in order)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
     }
 }

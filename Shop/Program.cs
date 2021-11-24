@@ -27,8 +27,14 @@ namespace Shop
             Order inventory = new Order() { _name = "home", _date = DateTime.Now, 
                 _products = new List<Product>() { chair, table, picture, watch} };
 
+
+            productRepository.Add(book);
+
             ProductService productService = new ProductService(productRepository);
             OrderService orderService = new OrderService(orderRepository);
+
+            productRepository.Add(book);
+            productService.Add(pen);
 
             productService.Add(book);
             productService.Add(pen);
@@ -43,10 +49,12 @@ namespace Shop
             orderService.Add(stationary);
             orderService.Add(inventory);
 
+            Console.WriteLine($"Total product number in the repository is: {orderService.ToatlProductCount()}");
+
             Console.WriteLine($"Total price for stationary is: {orderService.GetOrderPrice(stationary._id)} " +
                 $"total count is: {orderService.GetProductCount(stationary._id)}");
 
-            Console.WriteLine($"Total price for stationary is: {orderService.GetOrderPrice(inventory._id)} " +
+            Console.WriteLine($"Total price for inventory is: {orderService.GetOrderPrice(inventory._id)} " +
                 $"total count is: {orderService.GetProductCount(inventory._id)}");
 
             Console.WriteLine();

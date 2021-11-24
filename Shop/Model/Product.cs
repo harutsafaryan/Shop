@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    public class Product : Base
+    public class Product
     {
+        public Guid _id = Guid.NewGuid();
+        public string _name;
         public decimal _price;
-
     }
 }
