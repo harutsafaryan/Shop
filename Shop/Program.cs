@@ -1,4 +1,5 @@
-﻿using Shop.Repository;
+﻿using Shop.Model;
+using Shop.Repository;
 using Shop.Services;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,9 @@ namespace Shop
             Order inventory = new Order() { Name = "home", OrderDate = DateTime.Now, 
                 Products = new List<Product>() { chair, table, picture, watch} };
 
-
+            Element element = new Element(2000, 1200, 2, 0, 2);
+            Element element1 = new Element(900, 1100, 1, 0, 2);
+            Element element2 = new Element(2000, 3000, 1, 1, 1);
 
             ProductService productService = new ProductService(productRepository);
             OrderService orderService = new OrderService(orderRepository);
@@ -62,6 +65,7 @@ namespace Shop
             //{
             //    orderPrice += item.Price;
             //}
+
 
             decimal orderPrice = order.Products.Sum(x => x.Price);
 
